@@ -24,58 +24,336 @@
 \theoremstyle{definition}
 \setlength{\unitlength}{1cm}
 \thicklines
+\newtheorem{ex}{Example}
 \begin{document}
-	\title{Linear Transformation in Linear Space}
+	\title{\textbf{Linear Transformation on Linear Space} \\
+		\large\underline{Internship Report} 
+	}
 	\author{Anshada P.M}
+	\date{July,2019}
 	\maketitle
-	\section{Linear Transformation}
-	Let $ V $ and $W $ be an n dimensional vector space over a field $ \mathbb{F} $. Let $ T :V\rightarrow W $ be a function with $ V $ as its domain and its range contained in $ W $. $$ T(V)\subset W $$ We also assume $ T $ is linear in the sense that $$ T(v_1 + v_2) = T(v_1)+T(v_2) $$ $$ T(\alpha v_1)=\alpha T(v_1)$$ 
-	$\forall$ $ v_1,v_2 \in V$ and $\alpha\in\mathbb{F}$.\\
-
-	\begin{picture}(10,3)
-	\put(3,2){\circle{4}}
-	\put(2.8,2.8){V}
-	\put(8,2){\circle{4}}
-	\put(7.8,2.8){W}
-	\qbezier(3,2)(5.5,4)(7.8,2)
-	\put(5.5,2.995){\vector(1,0){0.2}}
-	\put(5.5,2.5){$ T $}
-	\put(2.7,2){$ v $}
-	\put(7.9,2){$ T v $}
-	\end{picture}
-	\\
-	Let $ L(V,W) $ denote the set of linear transformation from $V$ to $W.$ If $ T\in L(V,W),$ $T$ is defined if we prescribe the action of T on a basis of $V$.\\
-	\\
-    Let $\mathcal{B} = {v_1,v_2,...,v_n}$ be a basis of V.
-	Then $v\in V$ given by $v = x_1v_1+x_2v_2+...+x_nv_n$ , $\forall$ $x_i$ $\in \mathbb{F}$
-	$$T(v) = T(x_1v_1+x_2v_2+...+x_nv_n)$$
-	   $= x_1T(v_1)+x_2T(v_2)+...+x_nT(v_n)$\\
-	If we know every $T(v_i)$ we will get T(v).\\              
-	\begin{picture}(10,6)
-	%\put(2,3.2){\line(1,0){4}}
-	\put(2,3.2){\circle{2.5}}
-	\put(1.5,4){$ \mathbb{R}^3 $}
-	%\put(4,0.2){\line(2,3){2}}
-	\put(6,3.2){\circle{2.5}}
-	\put(6,4){$ \mathbb{R}^3 $}
-	\put(4,0.2){\circle{2.5}}
-	\put(2.2,0){$ \mathbb{P}_2(\mathbb{R}) $}
-	\put(1.3,3.2){$\phi(u)$}
-	\put(5.7,3.4){$\psi(u)$}
-	\put(4.,-0.1){u}
-	\qbezier(2,3.2)(4,4)(6,3.2)
-	\put(4,3.6){\vector(1,0){0.2}}
-	\put(3.8,3.9){$ \psi\phi^{-1} $}
-	\qbezier(4,0.2)(4,2)(6,3.2)
-	\put(4.3,1.6){\vector(1,1){0.2}}
-	\put(4.5,1.6){$ \psi $}
-	\qbezier(4,0.2)(2,2)(2,3.2)
-	\put(2.6,1.7){\vector(-1,1){0.1}}
-	\put(2.2,1.6){$ \phi $}
-	%\put(4,1.2){\oval(4,2)[r]}
-	\end{picture}
+	\pagenumbering{arabic}
 	\section{Matrix Representation of Linear Transformation}
-	
-	
-	
-\end{document}
+	 Let $V$ be an n-dimensional vector space over the field $ \mathbb{F}$ and $W$ an m-dimensional vector space over $\mathbb{F}$. Let $\mathcal{B}$:=$\{u_1,u_2,...,u_n\}$ be an ordered basis for $U$ and $\mathcal{B\prime}$:=$\{v_1,v_2,...,v_n\}$ an ordered basis for $V$. For each linear transformation $T$ from $U$ into $V$, there is an $ m\times n$ matrix $\mathbf{A}$ with entries in $\mathbb{F}$.\\
+	 Let $T$ be given by
+ 	 $$ T(u_{i})=a_{1_{i}}v_1+a_{2_{i}}v_2+...+a_{m_{i}}v_m $$
+	  i = (1,2,...,n)\\
+	  
+	  \section{Similarity Transformation}
+	  Let $\mathbf{A}$ and $\mathbf{B}$ be n$\times$n (square) matrices over the field $\mathbb{F}$. We say that $\mathbf{B}$ is similar to $\mathbf{A}$ over $\mathbb{F}$ if there is an invertible n$\times$ n matrix $\mathbf{P}$ over $\mathbb{F}$ such that  $\mathbf{B}$=$\mathbf{P^{-1}}\mathbf{A}\mathbf{P}$.Therefore we will get an equivalence class between $\mathbf{A}$ and $\mathbf{B}$.This relation $\sim$ induces a partition within the matrices.\\
+	  Equivalent matrix represents the same linear transformation. The matrices which are not in the same partition cannot involve in the same linear transformation.\\
+	  \\
+	  $\mathbf{Example:}$Zero matrix is the only element in its partition so as identity matrix.
+	  \section{Diagonal Matrix}
+	  Does there exist a 'simple' matrix with as many zero entries representing a given linear transformation?\\
+	  A simple non-trivial matrix will be diagonal matrix.\\
+	  If $f(t)$ is a polynomial in $\mathbb{F}$ and $T$ is a represented by a diagonal matrix ,then is represented by with respect to the same basis
+	  
+	  \section{Diagonizability}
+	  $T$ is diagonizable if there exists an ordered basis for $V$ consisting of eigenvectors of $T$.
+	  \subsection{Diagonizable Operators} 
+	  Let $T \in L(V)$ be diagonizable.$\exists$ distinct eigenvalues $\lambda_{1},\lambda_{2},...,\lambda_{k}$ each of algebric multiplicity $n_1,n_2,...,n_k$ respectively, and eigen spaces $W_1,W_2,...,W_k$ respectively with dim$(W_i) = n_i.$
+	  $$n_1+n_2+...+n_k = n$$
+	  $V = W_1\oplus W_2\oplus...\oplus W_k$ ,\space 
+	  $(W_i\cap W_j =\{0\}$ for eigen spaces $W_i$ and $W_j$ belonging to the wigenvalues $\lambda_{i}$ and $\lambda_{j}$ whenever $\lambda_{i} \neq \lambda_{j})$
+	  That is, $v \in V$ has a unique representation
+	 .
+	 $$ v = w_1+w_2+...+w_k , \space (w_i\in W_i)$$
+	 $$Tw_i = \lambda_{i}w_i$$
+	 One can define, $P_i:V\to V$ by $P_iv = w_i$\\
+	 Then $P_i$ 's are linear and ${P_i}^2 = P_i$ (Idempotent). Then $P_i$ is called projection on $W_i$ along ${W\prime}_i$ where $${W\prime}_i= W_1\oplus W_2\oplus,,,\oplus W_{i-1}\oplus W_{i+1}\oplus,,,\oplus W_k$$
+	 So, \space $V = W_i\oplus {W\prime}_i$\\
+	 Now, $v=w_1+w_2+...+w_k = P_1 v+P_2 v+...+P_k v$\\
+	 $\implies \boxed{I = P_1+P_2+...+P_k}$ - (1)
+	 \\
+	 $Tv = Tw_!+Tw_2+...+Tw_k$\\
+	 .\hspace{0.5cm}=$\lambda_{1}w_1+\lambda_{2}w_2+...\lambda_{k}w_k$\\
+	 .\hspace{0.5cm}=$\lambda_{1}P_1+\lambda_{2}P_2+...\lambda_{k}P_k$\\
+	 $\implies$
+	 $\boxed{T= \lambda_{1}P_1+\lambda_{2}P_2+...\lambda_{k}P_k}$ - (2)\\
+	 \textcircled{1} and \textcircled{2} constitute the celebrated \textbf{Spectral Theorom}.
+	 \\
+	 
+	 \begin{center}
+	 ----------x---------------x---------
+	 \end{center}
+	 Q1. Let $T$ be a linear transformation with respect to the ordered basis $\mathcal{B}:={1,t,t^2}.$
+	 $T(1)=3+2t+4t^2$\\
+	 $T(t)=2+2t*2$\\
+	 $T(t^{2})=4+2t+3t^{2}$\\
+	 Analyse this example and verify the spectral theory.\\
+	 Ans:\\
+	 The matrix representation corresponding to the linear transformation $T$ is 
+	 $
+	 \begin{bmatrix}
+	 3 & 2 & 4\\
+	 2 & 0 & 2\\
+	 4 & 2 & 3
+	 \end{bmatrix}
+	 $.\\
+	 If $T$ is diagonizable, the det[$T-\lambda I$] = 0 for $\lambda$ is the eigen value.\\
+	 $
+	 T-\lambda I =
+	 \begin{bmatrix}
+	 3-\lambda & 2 & 4\\
+	 2 & -\lambda & 2\\
+	 4 & 2 & 3-\lambda
+	 \end{bmatrix}
+	 $.\\
+	 $
+	 det
+	 \begin{bmatrix}
+	 3-\lambda & 2 & 4\\
+	 2 & -\lambda & 2\\
+	 4 & 2 & 3-\lambda
+	 \end{bmatrix}
+	 $ = -($\lambda^3 + 6\lambda^2 + 15\lambda+8$)\\
+	 Since det[$T-\lambda I$] = 0, \\
+	  $\lambda^3 + 6\lambda^2 + 15\lambda+8$ = 0.\\
+	  $(\lambda-8){(\lambda+1)}^2 = 0$\\
+	  So, the eigen values are 8,-1,-1.\\
+	  \\
+	  When $\lambda$ = 8,\\
+	 $
+	 [T-8I] = 
+	 \begin{bmatrix}
+	 -5 & 2 & 4\\
+	 2 & -8 & 2\\
+	 4 & 2 & -5
+	 \end{bmatrix}
+	 $ \\
+	 $
+	 \begin{bmatrix}
+	 -5 & 2 & 4\\
+	 2 & -8 & 2\\
+	 4 & 2 & -5
+	 \end{bmatrix}
+	 \begin{bmatrix}
+	 x_1\\
+	 x_2\\
+	 x_3
+	 \end{bmatrix}
+	 =
+	 \begin{bmatrix}
+	 0\\
+	 0\\
+	 0
+	 \end{bmatrix}
+	 $ \\
+	 $\implies
+	 2x_1+-8x_2+2x_3 = 0.\\
+	 4x_1+-2x_2+-5x_3 = 0.\\
+	 \implies x_1 = x_3,x_1 = 2x_2$.\\
+	 So.
+	 $
+	 \begin{bmatrix}
+	 x_1\\
+	 x_2\\
+	 x_3
+	 \end{bmatrix}
+	 =
+	 \begin{bmatrix}
+	 2x_2\\
+	 x_2\\
+	 2x_2
+	 \end{bmatrix}
+	 $\\
+	 When $x_2$ = 1,
+	 $
+	 \begin{bmatrix}
+	 2x_2\\
+	 x_2\\
+	 2x_2
+	 \end{bmatrix}
+	 =
+	 \begin{bmatrix}
+	 2\\
+	 1\\
+	 2
+	 \end{bmatrix}
+	 $\\
+	 $W_1 = Nullspace(T-8I)$.\\
+	 \\
+	 When $\lambda$ = -1,\\
+	 $
+	 [T-(-1)I] = 
+	 \begin{bmatrix}
+	 4 & 2 & 4\\
+	 2 & 1 & 2\\
+	 4 & 2 & 4
+	 \end{bmatrix}
+	 $ \\
+	 $
+	 \begin{bmatrix}
+	 4 & 2 & 4\\
+	 2 & 1 & 2\\
+	 4 & 2 & 4
+	 \end{bmatrix}
+	 \begin{bmatrix}
+	 x_1\\
+	 x_2\\
+	 x_3
+	 \end{bmatrix}
+	 =
+	 \begin{bmatrix}
+	 0\\
+	 0\\
+	 0
+	 \end{bmatrix}
+	 $ \\
+	 $\implies
+	 2x_1+1x_2+2x_3 = 0.\\
+	 x_1 =0,x_2=-2,x_3=1.\\
+	 x_2=0,x_1=1.x_3=-1.$
+	 So,$
+	 \begin{bmatrix}
+	 x_1\\
+	 x_2\\
+	 x_3
+	 \end{bmatrix}
+	 =
+	 \begin{bmatrix}
+	 0\\
+	 -2\\
+	 1
+	 \end{bmatrix}
+	 and
+	 \begin{bmatrix}
+	 1\\
+	 0\\
+	 -1
+	 \end{bmatrix}
+	 $\\
+	  $(x_1,x_2,x_3)\in {\mathbb{R}}^3$ then, $p(t)= x_1+x_2t+x_3t^2\\
+	  (x_1,x_2,x_3)=y_1(2,1,2)+y_2(0,-2,1)+y_3(1,0,-1)\\
+	  \hspace*{1.87cm}=((2y_1+y_3) , (y_1-2y_2) ,(2y_1+y_2-y_3))\\
+	  2y_1+y_3 = x_1,\\y_1-2y_2=x_2,\\2y_1+y_2-y_3=x_3\\
+	  \implies y_1 = \frac{1}{9}(2x_1+1x_2+2x_3)\\
+	  \hspace*{0.9cm}y_2 = \frac{1}{9}(1x_1+-4x_2+1x_3)\\
+	  \hspace*{0.9cm}y_3 = \frac{1}{9}(5x_1+-2x_2+-4x_3)	 \\
+	  \therefore(x_1,x_2,x_3)=[\frac{1}{9}(2x_1+1x_2+2x_3)](2,1,2)+\frac{1}{9}(x_1+-4x_2+x_3)](0,-2,1)+[\frac{1}{9}(5x_1+-2x_2+-4x_3)](1,0,-1).\\
+	  \\
+	  P_1(x_1,x_2,x_3)=[\frac{1}{9}(2x_1+1x_2+2x_3)](2,1,2)]\\
+	  .\hspace{2.2cm} = [\frac{1}{9}(4x_1+2x_2+4x_3),\frac{1}{9}(2x_1+1x_2+2x_3),\frac{1}{9}(4x_1+2x_2+4x_3)]\\$
+	  So 
+	  $
+	  [P_1] = 
+	  \begin{bmatrix}
+	  \frac{4}{9} & \frac{2}{9} & \frac{4}{9}\\
+	  \frac{2}{9} & \frac{1}{9} & \frac{2}{9}\\
+	  \frac{4}{9} & \frac{2}{9} & \frac{4}{9}
+	  \end{bmatrix}
+	  \\
+	  P_2(x_1,x_2,x_3)=\frac{1}{9}(x_1+-4x_2+x_3)](0,-2,1)+[\frac{1}{9}(5x_1+-2x_2+-4x_3)](1,0,-1)\\
+	  .\hspace{2.2cm} = [\frac{1}{9}(5x_1+-2x_2+-4x_3),\frac{1}{9}(-2x_1+8x_2+-2x_3),\frac{1}{9}(-4x_1+-2x_2+5x_3)]\\$
+	  So 
+	  $
+	  [P_2] = 
+	  \begin{bmatrix}
+	  \frac{5}{9} & \frac{-2}{9} & \frac{-4}{9}\\
+	  \frac{-2}{9} & \frac{8}{9} & \frac{-2}{9}\\
+	  \frac{-4}{9} & \frac{-2}{9} & \frac{5}{9}
+	  \end{bmatrix}
+	  \\
+	  \\
+	  $
+	  $[P_1]+[P_2]=\begin{bmatrix}
+	  \frac{4}{9} & \frac{2}{9} & \frac{4}{9}\\
+	  \frac{2}{9} & \frac{1}{9} & \frac{2}{9}\\
+	  \frac{4}{9} & \frac{2}{9} & \frac{4}{9}
+	  \end{bmatrix}
+	  +
+	  \begin{bmatrix}
+	  \frac{5}{9} & \frac{-2}{9} & \frac{-4}{9}\\
+	  \frac{-2}{9} & \frac{8}{9} & \frac{-2}{9}\\
+	  \frac{-4}{9} & \frac{-2}{9} & \frac{5}{9}
+	  \end{bmatrix}
+	  =
+	  \begin{bmatrix}
+	  1 & 0 & 0\\
+	  0 & 1 & 0\\
+	  0 & 0 & 1
+	  \end{bmatrix}
+	  =
+	  I\\
+	  \lambda_{1}[P_1]+\lambda_{2}[P_2]=
+	  8
+	  \begin{bmatrix}
+	  \frac{4}{9} & \frac{2}{9} & \frac{4}{9}\\
+	  \frac{2}{9} & \frac{1}{9} & \frac{2}{9}\\
+	  \frac{4}{9} & \frac{2}{9} & \frac{4}{9}
+	  \end{bmatrix}
+	  +
+	  -1
+	  \begin{bmatrix}
+	  \frac{5}{9} & \frac{-2}{9} & \frac{-4}{9}\\
+	  \frac{-2}{9} & \frac{8}{9} & \frac{-2}{9}\\
+	  \frac{-4}{9} & \frac{-2}{9} & \frac{5}{9}
+	  \end{bmatrix}
+	  $\\
+	  \hspace*{2.8cm}=
+	  $
+	  \begin{bmatrix}
+	  3 & 2 & 4\\
+	  2 & 0 & 2\\
+	  4 & 2 & 3
+	  \end{bmatrix} = [T]
+	  \\
+	  $
+	  Thus the properties of spectral theory have been verified with the help of the example.
+	  Moreover,the linear transformation $T$ can be also expressed in terms of a diagonal matrix with the ordered basis $\mathcal{B\prime}=\{(2+t+2t^2),(-2t+t^2),(1-t^2)\}$.
+	  $
+	  {[T]}_{\{(2+t+2t^2),(-2t+t^2)(1-t^2)\}} = 
+	  \begin{bmatrix}
+	  8 & 0 & 0\\
+	  0 & -1 & 0\\
+	  0 & 0 & -1
+	  \end{bmatrix}
+	  $.
+	  \section{Linear Transformation}
+	  Let $ V $ and $W $ be an n dimensional vector space over a field $ \mathbb{F} $. Let $ T :V\rightarrow W $ be a function with $ V $ as its domain and its range contained in $ W $. $$ T(V)\subset W $$ We also assume $ T $ is linear in the sense that $$ T(v_1 + v_2) = T(v_1)+T(v_2) $$ $$ T(\alpha v_1)=\alpha T(v_1)$$ 
+	  $\forall$ $ v_1,v_2 \in V$ and $\alpha\in\mathbb{F}$.\\
+	  
+	  \begin{picture}(10,3)
+	  \put(3,2){\circle{4}}
+	  \put(2.8,2.8){V}
+	  \put(8,2){\circle{4}}
+	  \put(7.8,2.8){W}
+	  \qbezier(3,2)(5.5,4)(7.8,2)
+	  \put(5.5,2.995){\vector(1,0){0.2}}
+	  \put(5.5,2.5){$ T $}
+	  \put(2.7,2){$ v $}
+	  \put(7.9,2){$ T v $}
+	  \end{picture}
+	  \\
+	  Let $ L(V,W) $ denote the set of linear transformation from $V$ to $W.$ If $ T\in L(V,W),$ $T$ is defined if we prescribe the action of T on a basis of $V$.\\
+	  \\
+	  Let $\mathcal{B} = {v_1,v_2,...,v_n}$ be a basis of V.
+	  Then $v\in V$ given by $v = x_1v_1+x_2v_2+...+x_nv_n$ , $\forall$ $x_i$ $\in \mathbb{F}$
+	  $$T(v) = T(x_1v_1+x_2v_2+...+x_nv_n)$$
+	  $= x_1T(v_1)+x_2T(v_2)+...+x_nT(v_n)$\\
+	  If we know every $T(v_i)$ we will get T(v).\\              
+	  \begin{picture}(10,6)
+	  %\put(2,3.2){\line(1,0){4}}
+	  \put(2,3.2){\circle{2.5}}
+	  \put(1.5,4){$ \mathbb{R}^3 $}
+	  %\put(4,0.2){\line(2,3){2}}
+	  \put(6,3.2){\circle{2.5}}
+	  \put(6,4){$ \mathbb{R}^3 $}
+	  \put(4,0.2){\circle{2.5}}
+	  \put(2.2,0){$ \mathbb{P}_2(\mathbb{R}) $}
+	  \put(1.3,3.2){$\phi(u)$}
+	  \put(5.7,3.4){$\psi(u)$}
+	  \put(4.,-0.1){u}
+	  \qbezier(2,3.2)(4,4)(6,3.2)
+	  \put(4,3.6){\vector(1,0){0.2}}
+	  \put(3.8,3.9){$ \psi\phi^{-1} $}
+	  \qbezier(4,0.2)(4,2)(6,3.2)
+	  \put(4.3,1.6){\vector(1,1){0.2}}
+	  \put(4.5,1.6){$ \psi $}
+	  \qbezier(4,0.2)(2,2)(2,3.2)
+	  \put(2.6,1.7){\vector(-1,1){0.1}}
+	  \put(2.2,1.6){$ \phi $}
+	  %\put(4,1.2){\oval(4,2)[r]}
+	  \end{picture}
+\end{document}	

@@ -356,4 +356,149 @@
 	  \put(2.2,1.6){$ \phi $}
 	  %\put(4,1.2){\oval(4,2)[r]}
 	  \end{picture}
+	  Example:1
+	  $T(1)=5+1t+3t^2$\\
+	  $T(t)=-6+4t-6t^2$\\
+	  $T(t^{2})=-6+2t+-4t^{2}$\\
+	  Ans:\\
+	  The matrix representation corresponding to the linear transformation $T$ is 
+	  $
+	  \begin{bmatrix}
+	  5 & -6 & -6\\
+	  -1 & 4 & 2\\
+	  3 & -6 & 4
+	  \end{bmatrix}
+	  $.\\
+	  If $T$ is diagonizable, the det[$T-\lambda I$] = 0 for $\lambda$ is the eigen value.\\
+	  $
+	  T-\lambda I =
+	  \begin{bmatrix}
+	  5-\lambda & -6 & -6\\
+	  -1 & 4-\lambda & 2\\
+	  3 & -6 & 4-\lambda
+	  \end{bmatrix}
+	  $.\\
+	  $
+	  det
+	  \begin{bmatrix}
+	  5 & -6 & -6\\
+	  -1 & 4 & 2\\
+	  3 & -6 & 4
+	  \end{bmatrix}
+	  $ = -($\lambda^3 - 3\lambda^2 + 6\lambda-4$)\\
+	  Since det[$T-\lambda I$] = 0, \\
+	  $\lambda^3 + 3\lambda^2 -6\lambda-4$ = 0.\\
+	  $(\lambda-1){(\lambda-2)}^2 = 0$\\
+	  So, the eigen values are 1,2,2.\\
+	  \\
+	  When $\lambda$ = 1,\\
+	  $
+	  [T-1I] = 
+	  \begin{bmatrix}
+	  4 & -6 & -6\\
+	  -1 & 3 & 2\\
+	  3 & -6 & 3
+	  \end{bmatrix}
+	  $ \\
+	  $
+	  \begin{bmatrix}
+	  4 & -6 & -6\\
+	  -1 & 3 & 2\\
+	  3 & -6 & 3
+	  \end{bmatrix}
+	  \begin{bmatrix}
+	  x_1\\
+	  x_2\\
+	  x_3
+	  \end{bmatrix}
+	  =
+	  \begin{bmatrix}
+	  0\\
+	  0\\
+	  0
+	  \end{bmatrix}
+	  $ \\
+	  $\implies
+	  4x_1-6x_2-6x_3 = 0.\\
+	  -x_1+3x_2+2x_3 = 0.\\
+	  \implies x_1 = x_3,x_1 = -3x_2$.\\
+	  So.
+	  $
+	  \begin{bmatrix}
+	  x_1\\
+	  x_2\\
+	  x_3
+	  \end{bmatrix}
+	  =
+	  \begin{bmatrix}
+	  -3x_2\\
+	  x_2\\
+	  -3x_2
+	  \end{bmatrix}
+	  $\\
+	  When $x_2$ = -1,
+	  $
+	  \begin{bmatrix}
+	  -3x_2\\
+	  x_2\\
+	  -3x_2
+	  \end{bmatrix}
+	  =
+	  \begin{bmatrix}
+	  3\\
+	  -1\\
+	  3
+	  \end{bmatrix}
+	  $\\
+	  $W_1 = Nullspace(T-I)$.\\
+	  \\
+	  When $\lambda$ = 2,\\
+	  $
+	  [T-2I] = 
+	  \begin{bmatrix}
+	  3 & -6 & -6\\
+	  -1 & 2 & 2\\
+	  3 & -6 & 2
+	  \end{bmatrix}
+	  $ \\
+	  $
+	  \begin{bmatrix}
+	  3 & -6 & -6\\
+	  -1 & 2 & 2\\
+	  3 & -6 & -6
+	  \end{bmatrix}
+	  \begin{bmatrix}
+	  x_1\\
+	  x_2\\
+	  x_3
+	  \end{bmatrix}
+	  =
+	  \begin{bmatrix}
+	  0\\
+	  0\\
+	  0
+	  \end{bmatrix}
+	  $ \\
+	  $\implies
+	  -x_1+2x_2+2x_3 = 0.\\
+	  \implies x_1 = 0, x_2=1,x_3=-1.\\
+	  x_1 = 2, x_2=0,x_3=-1$.\\
+	  $W_2 = Nullspace(T-2I)$.\\
+	  $\{(0,1,-1),(2,0,1)\}$ spans $W_2$.\\
+	  The linear transformation $T$ can be also expressed in terms of a diagonal matrix with the ordered basis $\mathcal{B\prime}=\{(1+2t+2t^2),(t-t^2),(2+t^2)\}.\\
+	  p_1 = 1+2t+2t^2\\
+	  p_2 = t-t^2\\
+	  p_3 = 2+t^2\\$
+	  $p_1,p_2$ and $p_3$ are the eigen vectors of T.\\
+	  $
+	  Tp_1 = 1p_1+0p_2+0p_3\\
+	  Tp_1 = 0p_1+20p_2+0p_3\\
+	  Tp_1 = 0p_1+0p_2+2p_3\\
+	  {[T]}_{\{p_1,p_2,p_3\}}=
+	  \begin{bmatrix}
+	  1 & 0 & 0\\
+	  0 & 2 & 0\\
+	  0 & 0 & 2
+	  \end{bmatrix}
+	  $
 \end{document}	

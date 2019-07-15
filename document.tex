@@ -29,7 +29,7 @@
 	\author{Anshada P.M}
 	\maketitle
 	\section{Linear Transformation}
-	Let $ V $ and $W $ be an n dimensional vector space over a field $ \mathbb{F} $. Let $ T :V\rightarrow W $ be a function with $ V $ as its domain and its range contained in $ W $. $$ T(V)\subset W $$ We also assume $ T $ is linear in the sense that $$ T(v_1 + v_2) = T(v_1)+T(v_2) $$ $$ T(\alpha v_1)=\alpha T(v_1)$$ 
+	Let $ V $ and $W $ be an n dimensional vector space over a field $ \mathbb{F} $. Let $ T :V\rightarrow W $ be a function with $ V $ as its domain and its range contained in $ W $. $$ T(V)\subset W $$ $ T $ is linear in the sense that $$ T(v_1 + v_2) = T(v_1)+T(v_2) $$ $$ T(\alpha v_1)=\alpha T(v_1)$$ 
 	$\forall$ $ v_1,v_2 \in V$ and $\alpha\in\mathbb{F}$.\\
 
 	\begin{picture}(10,3)
@@ -49,7 +49,7 @@
     Let $\mathcal{B} = \{v_1,v_2,...,v_n\}$ be a basis of $V$.
 	Then $v\in V$ given by $v = x_1v_1+x_2v_2+...+x_nv_n$ , $\forall$ $x_i$ $\in \mathbb{F}$
 	$$T(v) = T(x_1v_1+x_2v_2+...+x_nv_n)$$
-	$$    = x_1T(v_1)+x_2T(v_2)+...+x_nT(v_n)$$
+	$\hspace*{5cm}    = x_1T(v_1)+x_2T(v_2)+...+x_nT(v_n)$\\
 	If we know each $T(v_i)$ we will get $T(v)$.\\              
 	\begin{picture}(10,6)
 	%\put(2,3.2){\line(1,0){4}}
@@ -108,7 +108,7 @@
 	1&4&1\\
 	-2&-4&-1\\
 	\end{bmatrix}	
-	$.Does this diagonizable?\\
+	$.Verify spectral theorem.\\
 	$\mathbf{Solution:}$$ T $ is diagonizable if $ \exists $ a base for $ \mathbb{P}_{2}(\mathbb{R}) $	consisting of eigen vectors of $ T $.\\
 	$[ T ]- \lambda I =\begin{bmatrix}
     3-\lambda&2&2\\
@@ -217,30 +217,35 @@
 		\put(1.7,0.6){$\mathbb{F}^{n}$}\put(5.8,0.6){$\mathbb{F}^{n}$}\put(1.7,9.1){$\mathbb{F}^{n}$}\put(6,9.1){$\mathbb{F}^{n}$}\put(6.1,4.9){$\mathbb{V}$}\put(1.6,4.9){$\mathbb{V}$}
 		\end{picture}
 	\end{center}
-	\begin{center}
 
-		\begin{picture}(10,6)
-	\put(2,3.2){\circle{2.5}}
-	\put(1.5,4){$ \mathbb{F}^n $}
-	\put(6,3.2){\circle{2.5}}
-	\put(6,4){$ \mathbb{F}^n $}
-	\put(4,0.2){\circle{2.5}}
-	\put(2.2,0){$ \mathbb{P}_2(\mathbb{R}) $}
-	\put(1.3,3.2){$\phi(u)$}
-	\put(5.7,3.4){$\psi(u)$}
-	\put(4.,-0.1){$u$}
-	\qbezier(2,3.2)(4,4)(6,3.2)
-	\put(4,3.6){\vector(1,0){0.2}}
-	\put(3.8,3.9){$ \psi\phi^{-1} $}
-	\qbezier(4,0.2)(4,2)(6,3.2)
-	\put(4.3,1.6){\vector(1,1){0.2}}
-	\put(4.5,1.6){$ \psi $}
-	\qbezier(4,0.2)(2,2)(2,3.2)
-	\put(2.6,1.7){\vector(-1,1){0.1}}
-	\put(2.2,1.6){$ \phi $}
-	%\put(4,1.2){\oval(4,2)[r]}
-	\end{picture}
-	\end{center}
-	
+	Let $ T $ be the linear transformation from $ \mathbb{P}_{2}(\mathbb{R}) $ to $ \mathbb{R}^{3} $ defined by $ \phi(p):= $ ($ p_{0} $ $ p_{1} $ $ p_{2} $). Let $ \mathfrak{B}_{1}=\{1,t,t^2\} $ be the basis for the vector space $ \mathbb{P}_{2}(\mathbb{R}) $. So the function can be represented as $p_{0}+p_{1}t+p_{3}t^2\to  $($ p_{0} $ , $ p_{1} $ , $ p_{2} $).  $$ [T]_{\mathfrak{B}_{1}}=\phi $$
+	Let $ \mathfrak{B}_{2}=\{1+t,1-t,t+t^2\} $ be another basis in $ \mathbb{P}_{2}(\mathbb{R}) $. Then $$ p=q_{0}(1+t)+q_{1}(1-t)+q_{2}(t+t^2) $$
+	$ \hspace*{4.4cm}=(q_{0}+q_{1})+(q_{0}-q_{1}+q_{2})t+(q_{2}t^2) $$$ \implies  q_{0}+q_{1}=p_{0},q_{0}-q_{1}+q_{2}=p_{1} ,q_{2}=p_{2}$$$$ q_{0}=\frac{1}{2}(p_{0}+p_{1}-p_{2}),q_{1}=\frac{1}{2}(p_{0}1p_{1}+p_{2}) ,q_{2}=p_{2}$$\\The transformation with respect to the basis $ \mathfrak{B}_{2} $ can be represented as  $$ [T]_{\mathfrak{B}_{2}}=\psi(p)=(q_{0},q_{1},q_{2}) $$$ \hspace*{6.1cm}= $($ \frac{1}{2}(p_{0}+p_{1}-p_{2}) $ , $ \frac{1}{2}(p_{0}1p_{1}+p_{2})  $ , $ p_{2} $)
+		\begin{center}		
+		
+		\begin{picture}(8,5)
+		\put(2,3.2){\circle{2.5}}
+		\put(1.5,4){$ \mathbb{F}^n $}
+		\put(6,3.2){\circle{2.5}}
+		\put(6,4){$ \mathbb{F}^n $}
+		\put(4,0.2){\circle{2.5}}
+		\put(2.2,0){$ \mathbb{P}_2(\mathbb{R}) $}
+		\put(1.3,3.2){$\phi(u)$}
+		\put(5.7,3.4){$\psi(u)$}
+		\put(4.,-0.1){$u$}
+		\qbezier(2,3.2)(4,4)(6,3.2)
+		\put(4,3.6){\vector(1,0){0.2}}
+		\put(3.8,3.9){$ \psi\phi^{-1} $}
+		\qbezier(4,0.2)(4,2)(6,3.2)
+		\put(4.3,1.6){\vector(1,1){0.2}}
+		\put(4.5,1.6){$ \psi $}
+		\qbezier(4,0.2)(2,2)(2,3.2)
+		\put(2.6,1.7){\vector(-1,1){0.1}}
+		\put(2.2,1.6){$ \phi $}
+		%\put(4,1.2){\oval(4,2)[r]}
+		\end{picture}
+	\end{center}\\
+	Let $ T\in L(\mathbb{V}) $  .We can represent the $ T $ with respect to different basis.
+	 The same transformation changes according to the basis choosen.
 	
 \end{document}

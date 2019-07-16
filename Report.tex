@@ -30,7 +30,7 @@
 	\title{\textbf{Linear Transformation on Linear Space} \\
 		\large\underline{Internship Report} 
 	}
-	\author{Anshada P.M}
+	\author{Fida Salim}
 	\date{July,2019}
 	\maketitle
 	\pagenumbering{arabic}
@@ -54,9 +54,12 @@
 	\\
 	Let $\mathcal{B} = {v_1,v_2,...,v_n}$ be a basis of V.
 	Then $v\in V$ given by $v = x_1v_1+x_2v_2+...+x_nv_n$ , $\forall$ $x_i$ $\in \mathbb{F}$
-	$$T(v) = T(x_1v_1+x_2v_2+...+x_nv_n)$$
-	$= x_1T(v_1)+x_2T(v_2)+...+x_nT(v_n)$\\
-	If we know every $T(v_i)$ we will get T(v).\\              
+	\begin{center}
+		$$T(v) = T(x_1v_1+x_2v_2+...+x_nv_n)$$
+		$= x_1T(v_1)+x_2T(v_2)+...+x_nT(v_n)$\\
+	\end{center}
+	If we know every $T(v_i)$ we will get T(v).\\   
+	\\           
 	Let $ T $ be the linear transformation from $ \mathbb{P}_{2}(\mathbb{R}) $ to $ \mathbb{R}^{3} $ defined by $ \phi(p):= $ ($ p_{0} $ $ p_{1} $ $ p_{2} $). Let $ \mathfrak{B}_{1}=\{1,t,t^2\} $ be the basis for the vector space $ \mathbb{P}_{2}(\mathbb{R}) $. So the function can be represented as $p_{0}+p_{1}t+p_{3}t^2\to  $($ p_{0} $ , $ p_{1} $ , $ p_{2} $).  $$ T_{\mathfrak{B}_{1}}=\phi $$
 	Let $ \mathfrak{B}_{2}=\{1+t,1-t,t+t^2\} $ be another basis in $ \mathbb{P}_{2}(\mathbb{R}) $. Then $$ p=q_{0}(1+t)+q_{1}(1-t)+q_{2}(t+t^2) $$
 	$ \hspace*{4.4cm}=(q_{0}+q_{1})+(q_{0}-q_{1}+q_{2})t+(q_{2}t^2) $$$ \implies  q_{0}+q_{1}=p_{0},q_{0}-q_{1}+q_{2}=p_{1} ,q_{2}=p_{2}$$$$ q_{0}=\frac{1}{2}(p_{0}+p_{1}-p_{2}),q_{1}=\frac{1}{2}(p_{0}+p_{1}+p_{2}) ,q_{2}=p_{2}$$\\The transformation with respect to the basis $ \mathfrak{B}_{2} $ can be represented as  $$ T_{\mathfrak{B}_{2}}=\psi(p)=(q_{0},q_{1},q_{2}) $$$ \hspace*{6.1cm}= $($ \frac{1}{2}(p_{0}+p_{1}-p_{2}) $ , $ \frac{1}{2}(p_{0}1p_{1}+p_{2})  $ , $ p_{2} $)
@@ -69,9 +72,9 @@
 		\put(6,4){$ \mathbb{F}^n $}
 		\put(4,0.2){\circle{2.5}}
 		\put(2.2,0){$ \mathbb{P}_2(\mathbb{R}) $}
-		\put(1.3,3.2){$\phi(u)$}
-		\put(5.7,3.4){$\psi(u)$}
-		\put(4.,-0.1){$u$}
+		\put(1.3,3.2){$\phi(p)$}
+		\put(5.7,3.4){$\psi(p)$}
+		\put(4.,-0.1){$p$}
 		\qbezier(2,3.2)(4,4)(6,3.2)
 		\put(4,3.6){\vector(1,0){0.2}}
 		\put(3.8,3.9){$ \psi\phi^{-1} $}
@@ -231,17 +234,340 @@
   $ \Lambda $ maps $ \mathbb{F}^{n} $ to $ \mathbb{F}^{n} $ and has the property that $$\Lambda e_{i}=\lambda e_{i} $$ $$T( u_{i})=\lambda e_{i} $$ where $ u_{i}=\phi^{-1}(e_{i}) $, ($ i=1,2,3,...n $)\\$ \implies \lambda_{1}, \lambda_{2} ,...\lambda_{n} $ are the eigen values of $ T $ and $ u_{1},u_{2},...,u_{n} $ are the corresponding eigen vectors. \\$$ Tu_{i}=\lambda_{i}u_{i} $$ $ \hspace*{5.5cm} T(\phi^{-1}e_{i})=\lambda_{i}\phi^{-1}e_{i} $\\$ \hspace*{4.9cm} (\phi T \phi^{-1})(e_{i})=\Lambda e_{i}=\lambda_{i}e_{i}=\lambda_{i}\phi(u_{i}) $\\ $ \hspace*{4.6cm} \phi^{-1}\phi T(\phi^{-1}e_{i})=\phi^{-1}\lambda_{i}\phi (u_{i}) $\\$ \hspace*{5.5cm} T(\phi^{-1}e_{i})=\lambda_{i}\phi^{-1}e_{i}
   $\\$ \hspace*{5.3cm} T(\phi^{-1}(e_{i}))=\lambda_{i}u_{i} $\\$\hspace*{6.5cm} Tu_{i}=\lambda_{i}u_{i} $\\
   So the problem reduces to finding $u_{i}$'s which are eigen vectors of $ T $ such that $ \{u_{1},u_{2},...,u_{n}\} $ forms an ordered basis for $ \mathbb{V} $. It is not always possible.
+  \\
+  \\
+  $ \mathbf{Example:1} $\\
+  $T(1)=5+1t+3t^2$\\
+  $T(t)=-6+4t-6t^2$\\
+  $T(t^{2})=-6+2t+-4t^{2}$\\
+  Ans:\\
+  The matrix representation corresponding to the linear transformation $T$ is 
+  $
+  \begin{bmatrix}
+  5 & -6 & -6\\
+  -1 & 4 & 2\\
+  3 & -6 & 4
+  \end{bmatrix}
+  $.\\
+  If $T$ is diagonizable, the det[$T-\lambda I$] = 0 for $\lambda$ is the eigen value.\\
+  $
+  T-\lambda I =
+  \begin{bmatrix}
+  5-\lambda & -6 & -6\\
+  -1 & 4-\lambda & 2\\
+  3 & -6 & 4-\lambda
+  \end{bmatrix}
+  $.\\
+  $
+  det
+  \begin{bmatrix}
+  5-\lambda & -6 & -6\\
+  -1 & 4-\lambda & 2\\
+  3 & -6 & 4-\lambda
+  \end{bmatrix}
+  $ = -($\lambda^3 - 3\lambda^2 + 6\lambda-4$)\\
+  Since det[$T-\lambda I$] = 0, \\
+  $\lambda^3 + 3\lambda^2 -6\lambda-4$ = 0.\\
+  $(\lambda-1){(\lambda-2)}^2 = 0$\\
+  So, the eigen values are 1,2,2.\\
+  \\
+  When $\lambda$ = 1,\\
+  $
+  [T-1I] = 
+  \begin{bmatrix}
+  4 & -6 & -6\\
+  -1 & 3 & 2\\
+  3 & -6 & 3
+  \end{bmatrix}
+  $ \\
+  $
+  \begin{bmatrix}
+  4 & -6 & -6\\
+  -1 & 3 & 2\\
+  3 & -6 & 3
+  \end{bmatrix}
+  \begin{bmatrix}
+  x_1\\
+  x_2\\
+  x_3
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  0\\
+  0\\
+  0
+  \end{bmatrix}
+  $ \\
+  $\implies
+  4x_1-6x_2-6x_3 = 0.\\
+  -x_1+3x_2+2x_3 = 0.\\
+  \implies x_1 = x_3,x_1 = -3x_2$.\\
+  So.
+  $
+  \begin{bmatrix}
+  x_1\\
+  x_2\\
+  x_3
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  -3x_2\\
+  x_2\\
+  -3x_2
+  \end{bmatrix}
+  $\\
+  When $x_2$ = -1,
+  $
+  \begin{bmatrix}
+  -3x_2\\
+  x_2\\
+  -3x_2
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  3\\
+  -1\\
+  3
+  \end{bmatrix}
+  $\\
+  $W_1 = Nullspace(T-I)$.\\
+  \\
+  When $\lambda$ = 2,\\
+  $
+  [T-2I] = 
+  \begin{bmatrix}
+  3 & -6 & -6\\
+  -1 & 2 & 2\\
+  3 & -6 & 2
+  \end{bmatrix}
+  $ \\
+  $
+  \begin{bmatrix}
+  3 & -6 & -6\\
+  -1 & 2 & 2\\
+  3 & -6 & -6
+  \end{bmatrix}
+  \begin{bmatrix}
+  x_1\\
+  x_2\\
+  x_3
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  0\\
+  0\\
+  0
+  \end{bmatrix}
+  $ \\
+  $\implies
+  -x_1+2x_2+2x_3 = 0.\\
+  \implies x_1 = 0, x_2=1,x_3=-1.\\
+  x_1 = 2, x_2=0,x_3=-1$.\\
+  $W_2 = Nullspace(T-2I)$.\\
+  $\{(0,1,-1),(2,0,1)\}$ spans $W_2$.\\
+  The linear transformation $T$ can be also expressed in terms of a diagonal matrix with the ordered basis $\mathcal{B\prime}=\{(1+2t+2t^2),(t-t^2),(2+t^2)\}.\\
+  p_1 = 1+2t+2t^2\\
+  p_2 = t-t^2\\
+  p_3 = 2+t^2\\$
+  $p_1,p_2$ and $p_3$ are the eigen vectors of T.\\
+  $
+  Tp_1 = 1p_1+0p_2+0p_3\\
+  Tp_1 = 0p_1+20p_2+0p_3\\
+  Tp_1 = 0p_1+0p_2+2p_3\\
+  {[T]}_{\{p_1,p_2,p_3\}}=
+  \begin{bmatrix}
+  1 & 0 & 0\\
+  0 & 2 & 0\\
+  0 & 0 & 2
+  \end{bmatrix}
+  $\\
+  So $T$ is diagonizable.
+  \\
+  \\
+  $\mathbf{ Example(2)}\\$
+  $T(1)=3+2t+2t^2$\\
+  $T(t)=1+2t+2t^2$\\
+  $T(t^{2})=-1+-1t$\\
+  Ans:\\
+  The matrix representation corresponding to the linear transformation $T$ is 
+  $
+  \begin{bmatrix}
+  3 & 1 & -1\\
+  2 & 2 & -1\\
+  2 & 2 & 0
+  \end{bmatrix}
+  $.\\
+  If $T$ is diagonizable, the det[$T-\lambda I$] = 0 for $\lambda$ is the eigen value.\\
+  $
+  T-\lambda I =
+  \begin{bmatrix}
+  3-\lambda & 1 & -1\\
+  2 & 2-\lambda & -1\\
+  2 & 2 & -\lambda
+  \end{bmatrix}
+  $.\\
+  $
+  det
+  \begin{bmatrix}
+  3-\lambda & 1 & -1\\
+  2 & 2-\lambda & -1\\
+  2 & 2 & -\lambda
+  \end{bmatrix}
+  $ = -($\lambda^3 - 3\lambda^2 + 6\lambda-4$)\\
+  Since det[$T-\lambda I$] = 0, \\
+  $\lambda^3 + 3\lambda^2 -6\lambda-4$ = 0.\\
+  $(\lambda-1){(\lambda-2)}^2 = 0$\\
+  So, the eigen values are 1,2,2.\\
+  \\
+  When $\lambda$ = 1,\\
+  $
+  [T-I] = 
+  \begin{bmatrix}
+  2 & 1 & -1\\
+  2 & 1 & -1\\
+  2 & 2 & -1
+  \end{bmatrix}
+  $ \\
+  $
+  \begin{bmatrix}
+  2 & 1 & -1\\
+  2 & 1 & -1\\
+  2 & 2 & -1
+  \end{bmatrix}
+  \begin{bmatrix}
+  x_1\\
+  x_2\\
+  x_3
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  0\\
+  0\\
+  0
+  \end{bmatrix}
+  $ \\
+  $\implies
+  2x_1+2x_2-1x_3 = 0.\\
+  \implies
+  2x_1+1x_2-1x_3 = 0.\\
+  \implies x_2=0\\
+  \implies 2x_1 = x_3$.\\
+  So.
+  $
+  \begin{bmatrix}
+  x_1\\
+  x_2\\
+  x_3
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  x_1\\
+  0\\
+  2x_1
+  \end{bmatrix}
+  $\\
+  When $x_1$ = 1,
+  $
+  \begin{bmatrix}
+  -x_1\\
+  0\\
+  2x_1
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  1\\
+  0\\
+  2
+  \end{bmatrix}
+  $\\
+  $W_1 = Nullspace(T-I)$.\\
+  $\{(1,0,2)\}$ spans $W_1$.\\
+  When $\lambda$ = 2,\\
+  $
+  [T-2I] = 
+  \begin{bmatrix}
+  1 & 1 & -1\\
+  2 & 0 & -1\\
+  2 & 2 & -2
+  \end{bmatrix}
+  $ \\
+  $
+  \begin{bmatrix}
+  1 & 1 & -1\\
+  2 & 0 & -1\\
+  2 & 2 & -2
+  \end{bmatrix}
+  \begin{bmatrix}
+  x_1\\
+  x_2\\
+  x_3
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  0\\
+  0\\
+  0
+  \end{bmatrix}
+  $ \\
+  $\implies
+  2x_1-x_3 = 0.\\
+  \implies 2x_1 = x_3, x_2 = x_1$.\\
+  So.
+  $
+  \begin{bmatrix}
+  x_1\\
+  x_2\\
+  x_3
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  x_1\\
+  x_1\\
+  2x_1
+  \end{bmatrix}
+  $\\
+  When $x_1$ = 1,
+  $
+  \begin{bmatrix}
+  x_1\\
+  x_1\\
+  2x_1
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  1\\
+  1\\
+  2
+  \end{bmatrix}
+  $\\
+  $W_2 = Nullspace(T-2I)$.\\ 
+  $\{(1,1,2)\}$ does not span $W_2$.\\\\
+   So, $T$ cannot be diagonized.
+  \begin{center}
+  	************************************
+  \end{center}
 	  \section{Diagonizability}
 	  $T$ is diagonizable if there exists an ordered basis for $V$ consisting of eigenvectors of $T$.
 	  \subsection{Diagonizable Operators} 
 	  Let $T \in L(V)$ be diagonizable.$\exists$ distinct eigenvalues $\lambda_{1},\lambda_{2},...,\lambda_{k}$ each of algebric multiplicity $n_1,n_2,...,n_k$ respectively, and eigen spaces $W_1,W_2,...,W_k$ respectively with dim$(W_i) = n_i.$
 	  $$n_1+n_2+...+n_k = n$$
+	  $$W_i = N(T-\lambda_i I)$$
 	  $V = W_1\oplus W_2\oplus...\oplus W_k$ ,\space 
-	  $(W_i\cap W_j =\{0\}$ for eigen spaces $W_i$ and $W_j$ belonging to the wigenvalues $\lambda_{i}$ and $\lambda_{j}$ whenever $\lambda_{i} \neq \lambda_{j})$
+	  $(W_i\cap W_j =\{0\}$ for eigen spaces $W_i$ and $W_j$ belonging to the eigenvalues $\lambda_{i}$ and $\lambda_{j}$ whenever $\lambda_{i} \neq \lambda_{j}).$
 	  That is, $v \in V$ has a unique representation
 	 .
 	 $$ v = w_1+w_2+...+w_k , \space (w_i\in W_i)$$
-	 $$Tw_i = \lambda_{i}w_i$$
+	 When dim $W_i = n_i$, basis for $W_i$ is $\{w_{i1},w_{i2},...,w_{in_i}\}$.
+	 $$Tw_{ij} = \lambda_{i}w_{ij}$$
+	 Then $\{w_{11},w_{12},...,w_{1n_1},w_{21},w_{22},...,w_{2n_2},...,w_{k1},w_{k2},...,w_{kn_k}\}$ forms a basis for $V$.\\
+	 Then the characteristic polynomial $p$ is given by $$p(\lambda)=(\lambda-\lambda_{1})^{n_1}(\lambda-\lambda_{2})^{n_2}...(\lambda-\lambda_{k})^{n_k}$$
+	 $n_i$ is the algebraic multiplicity of $\lambda_{i}$ and dim $W_i$ is called the algebraic multiplicity of $\lambda_{i}$.\\
+	 $T$ is diagonizable if and only if the algebraic multiplicity of each eigen values should be the geometric multiplicity.\\
+	 $\mathbf{Example(1)}$ was diagonalized with the help of the eigen values 1,2,2. However the matrix in $\mathbf{Example(2)}$ had the same eigen value of $\mathbf{Example(1)}$,
+	  $\mathbf{Example(2)}$ was not diagonizable because the geometrical multiplicity of the eigen value,2 (= 1) is not equal to the algebraic multiplicity of the eigen value,2(= 2).
+	 \\
+	 
+	 \subsection{Spectral Thoery}
 	 One can define, $P_i:V\to V$ by $P_iv = w_i$\\
 	 Then $P_i$ 's are linear and ${P_i}^2 = P_i$ (Idempotent). Then $P_i$ is called projection on $W_i$ along ${W\prime}_i$ where $${W\prime}_i= W_1\oplus W_2\oplus,,,\oplus W_{i-1}\oplus W_{i+1}\oplus,,,\oplus W_k$$
 	 So, \space $V = W_i\oplus {W\prime}_i$\\
@@ -255,300 +581,8 @@
 	 $\boxed{T= \lambda_{1}P_1+\lambda_{2}P_2+...\lambda_{k}P_k}$ - (2)\\
 	 \textcircled{1} and \textcircled{2} constitute the celebrated \textbf{Spectral Theorom}.
 	 \\
-	  \\
-	  Example:1
-	  $T(1)=5+1t+3t^2$\\
-	  $T(t)=-6+4t-6t^2$\\
-	  $T(t^{2})=-6+2t+-4t^{2}$\\
-	  Ans:\\
-	  The matrix representation corresponding to the linear transformation $T$ is 
-	  $
-	  \begin{bmatrix}
-	  5 & -6 & -6\\
-	  -1 & 4 & 2\\
-	  3 & -6 & 4
-	  \end{bmatrix}
-	  $.\\
-	  If $T$ is diagonizable, the det[$T-\lambda I$] = 0 for $\lambda$ is the eigen value.\\
-	  $
-	  T-\lambda I =
-	  \begin{bmatrix}
-	  5-\lambda & -6 & -6\\
-	  -1 & 4-\lambda & 2\\
-	  3 & -6 & 4-\lambda
-	  \end{bmatrix}
-	  $.\\
-	  $
-	  det
-	  \begin{bmatrix}
-	  5-\lambda & -6 & -6\\
-	  -1 & 4-\lambda & 2\\
-	  3 & -6 & 4-\lambda
-	  \end{bmatrix}
-	  $ = -($\lambda^3 - 3\lambda^2 + 6\lambda-4$)\\
-	  Since det[$T-\lambda I$] = 0, \\
-	  $\lambda^3 + 3\lambda^2 -6\lambda-4$ = 0.\\
-	  $(\lambda-1){(\lambda-2)}^2 = 0$\\
-	  So, the eigen values are 1,2,2.\\
-	  \\
-	  When $\lambda$ = 1,\\
-	  $
-	  [T-1I] = 
-	  \begin{bmatrix}
-	  4 & -6 & -6\\
-	  -1 & 3 & 2\\
-	  3 & -6 & 3
-	  \end{bmatrix}
-	  $ \\
-	  $
-	  \begin{bmatrix}
-	  4 & -6 & -6\\
-	  -1 & 3 & 2\\
-	  3 & -6 & 3
-	  \end{bmatrix}
-	  \begin{bmatrix}
-	  x_1\\
-	  x_2\\
-	  x_3
-	  \end{bmatrix}
-	  =
-	  \begin{bmatrix}
-	  0\\
-	  0\\
-	  0
-	  \end{bmatrix}
-	  $ \\
-	  $\implies
-	  4x_1-6x_2-6x_3 = 0.\\
-	  -x_1+3x_2+2x_3 = 0.\\
-	  \implies x_1 = x_3,x_1 = -3x_2$.\\
-	  So.
-	  $
-	  \begin{bmatrix}
-	  x_1\\
-	  x_2\\
-	  x_3
-	  \end{bmatrix}
-	  =
-	  \begin{bmatrix}
-	  -3x_2\\
-	  x_2\\
-	  -3x_2
-	  \end{bmatrix}
-	  $\\
-	  When $x_2$ = -1,
-	  $
-	  \begin{bmatrix}
-	  -3x_2\\
-	  x_2\\
-	  -3x_2
-	  \end{bmatrix}
-	  =
-	  \begin{bmatrix}
-	  3\\
-	  -1\\
-	  3
-	  \end{bmatrix}
-	  $\\
-	  $W_1 = Nullspace(T-I)$.\\
-	  \\
-	  When $\lambda$ = 2,\\
-	  $
-	  [T-2I] = 
-	  \begin{bmatrix}
-	  3 & -6 & -6\\
-	  -1 & 2 & 2\\
-	  3 & -6 & 2
-	  \end{bmatrix}
-	  $ \\
-	  $
-	  \begin{bmatrix}
-	  3 & -6 & -6\\
-	  -1 & 2 & 2\\
-	  3 & -6 & -6
-	  \end{bmatrix}
-	  \begin{bmatrix}
-	  x_1\\
-	  x_2\\
-	  x_3
-	  \end{bmatrix}
-	  =
-	  \begin{bmatrix}
-	  0\\
-	  0\\
-	  0
-	  \end{bmatrix}
-	  $ \\
-	  $\implies
-	  -x_1+2x_2+2x_3 = 0.\\
-	  \implies x_1 = 0, x_2=1,x_3=-1.\\
-	  x_1 = 2, x_2=0,x_3=-1$.\\
-	  $W_2 = Nullspace(T-2I)$.\\
-	  $\{(0,1,-1),(2,0,1)\}$ spans $W_2$.\\
-	  The linear transformation $T$ can be also expressed in terms of a diagonal matrix with the ordered basis $\mathcal{B\prime}=\{(1+2t+2t^2),(t-t^2),(2+t^2)\}.\\
-	  p_1 = 1+2t+2t^2\\
-	  p_2 = t-t^2\\
-	  p_3 = 2+t^2\\$
-	  $p_1,p_2$ and $p_3$ are the eigen vectors of T.\\
-	  $
-	  Tp_1 = 1p_1+0p_2+0p_3\\
-	  Tp_1 = 0p_1+20p_2+0p_3\\
-	  Tp_1 = 0p_1+0p_2+2p_3\\
-	  {[T]}_{\{p_1,p_2,p_3\}}=
-	  \begin{bmatrix}
-	  1 & 0 & 0\\
-	  0 & 2 & 0\\
-	  0 & 0 & 2
-	  \end{bmatrix}
-	  $\\
-	  \\
-	   Example:1\\
-	  $T(1)=3+2t+2t^2$\\
-	  $T(t)=1+2t+2t^2$\\
-	  $T(t^{2})=-1+-1t$\\
-	  Ans:\\
-	  The matrix representation corresponding to the linear transformation $T$ is 
-	  $
-	  \begin{bmatrix}
-	  3 & 1 & -1\\
-	  2 & 2 & -1\\
-	  2 & 2 & 0
-	  \end{bmatrix}
-	  $.\\
-	  If $T$ is diagonizable, the det[$T-\lambda I$] = 0 for $\lambda$ is the eigen value.\\
-	  $
-	  T-\lambda I =
-	  \begin{bmatrix}
-	  3-\lambda & 1 & -1\\
-	  2 & 2-\lambda & -1\\
-	  2 & 2 & -\lambda
-	  \end{bmatrix}
-	  $.\\
-	  $
-	  det
-	  \begin{bmatrix}
-	   3-\lambda & 1 & -1\\
-	  2 & 2-\lambda & -1\\
-	  2 & 2 & -\lambda
-	  \end{bmatrix}
-	  $ = -($\lambda^3 - 3\lambda^2 + 6\lambda-4$)\\
-	  Since det[$T-\lambda I$] = 0, \\
-	  $\lambda^3 + 3\lambda^2 -6\lambda-4$ = 0.\\
-	  $(\lambda-1){(\lambda-2)}^2 = 0$\\
-	  So, the eigen values are 1,2,2.\\
-	  \\
-	  When $\lambda$ = 2,\\
-	  $
-	  [T-2I] = 
-	  \begin{bmatrix}
-	  1 & 1 & -1\\
-	  2 & 0 & -1\\
-	  2 & 2 & -2
-	  \end{bmatrix}
-	  $ \\
-	  $
-	  \begin{bmatrix}
-	  1 & 1 & -1\\
-	  2 & 0 & -1\\
-	  2 & 2 & -2
-	  \end{bmatrix}
-	  \begin{bmatrix}
-	  x_1\\
-	  x_2\\
-	  x_3
-	  \end{bmatrix}
-	  =
-	  \begin{bmatrix}
-	  0\\
-	  0\\
-	  0
-	  \end{bmatrix}
-	  $ \\
-	  $\implies
-	  2x_1-x_3 = 0.\\
-	  \implies 2x_1 = x_3, x_2 = x_1$.\\
-	  So.
-	  $
-	  \begin{bmatrix}
-	  x_1\\
-	  x_2\\
-	  x_3
-	  \end{bmatrix}
-	  =
-	  \begin{bmatrix}
-	  x_1\\
-	  x_1\\
-	  2x_1
-	  \end{bmatrix}
-	  $\\
-	  When $x_1$ = 1,
-	  $
-	  \begin{bmatrix}
-	  x_1\\
-	  x_1\\
-	  2x_1
-	  \end{bmatrix}
-	  =
-	  \begin{bmatrix}
-	  1\\
-	  1\\
-	  2
-	  \end{bmatrix}
-	  $\\
-	  $W_1 = Nullspace(T-I)$.\\
-	  \\
-	  When $\lambda$ = 2,\\
-	  $
-	  [T-2I] = 
-	  \begin{bmatrix}
-	  3 & -6 & -6\\
-	  -1 & 2 & 2\\
-	  3 & -6 & 2
-	  \end{bmatrix}
-	  $ \\
-	  $
-	  \begin{bmatrix}
-	  3 & -6 & -6\\
-	  -1 & 2 & 2\\
-	  3 & -6 & -6
-	  \end{bmatrix}
-	  \begin{bmatrix}
-	  x_1\\
-	  x_2\\
-	  x_3
-	  \end{bmatrix}
-	  =
-	  \begin{bmatrix}
-	  0\\
-	  0\\
-	  0
-	  \end{bmatrix}
-	  $ \\
-	  $\implies
-	  -x_1+2x_2+2x_3 = 0.\\
-	  \implies x_1 = 0, x_2=1,x_3=-1.\\
-	  x_1 = 2, x_2=0,x_3=-1$.\\
-	  $W_2 = Nullspace(T-2I)$.\\
-	  $\{(0,1,-1),(2,0,1)\}$ spans $W_2$.\\
-	  The linear transformation $T$ can be also expressed in terms of a diagonal matrix with the ordered basis $\mathcal{B\prime}=\{(1+2t+2t^2),(t-t^2),(2+t^2)\}.\\
-	  p_1 = 1+2t+2t^2\\
-	  p_2 = t-t^2\\
-	  p_3 = 2+t^2\\$
-	  $p_1,p_2$ and $p_3$ are the eigen vectors of T.\\
-	  $
-	  Tp_1 = 1p_1+0p_2+0p_3\\
-	  Tp_1 = 0p_1+20p_2+0p_3\\
-	  Tp_1 = 0p_1+0p_2+2p_3\\
-	  {[T]}_{\{p_1,p_2,p_3\}}=
-	  \begin{bmatrix}
-	  1 & 0 & 0\\
-	  0 & 2 & 0\\
-	  0 & 0 & 2
-	  \end{bmatrix}
-	  $
-	  \begin{center}
-	  	************************************
-	  \end{center}
+	  					**************************
+	  
 	  Q1. Let $T$ be a linear transformation with respect to the ordered basis $\mathcal{B}:=\{1,t,t^2\}.$
 	  $T(1)=3+2t+4t^2$\\
 	  $T(t)=2+2t*2$\\
